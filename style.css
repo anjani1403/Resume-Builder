@@ -1,0 +1,177 @@
+/* External CSS */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --border-radius: 5px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color:black;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto 60px auto;
+    padding: 30px;
+    border : 2px solid #B7B28D;
+    border-radius : 45px;
+    box-shadow : 0 0 30px rgba(0, 0, 0, 100);
+    background-color : rgba(255, 255, 255, 0.9);
+}
+
+/* Form Styles */
+.form-section {
+    background: #B7B28D;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #4a5331;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-decoration : underline;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #4a5331;
+    margin-bottom: 15px;
+    margin-left : 20px;
+    font-size: 1.5em;
+}
+
+input{
+    margin-bottom : 20px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px;;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px;;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.upload {
+   background-color : white;
+   border-radius : 32px;
+}
+
+button {
+    margin-left: 20px;
+    background:  linear-gradient(to top, #525646, #9E9A7F);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.education-entry {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: black;
+}
+
+.resume-preview {
+    background: #B7B28D;
+    padding: 40px;
+    border-radius: 45px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.resume-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.photo-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.personal-info {
+    flex: 1;
+}
+
+.resume-section {
+    margin-bottom: 30px;
+}
+
+.resume-section h3 {
+    color: black;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .resume-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .photo-container {
+        margin-bottom: 20px;
+    }
+}
+
+@media print {
+    .form-section, button {
+        display: none;
+    }
+
+    .resume-preview {
+        box-shadow: none;
+    }
+}

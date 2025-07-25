@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="icon" href="icon2.png" type="image/png" sizes="64x64">
+    <link rel="stylesheet" href="style.css">
+
+    <!--Internal CSS-->
+	<style>
+		/*This will override some external CSS properties*/
+		.container {
+		    background: #B7B28D;
+		    backdrop-filter: blur(10px);
+	    	}
+
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+		body {
+		    font-family: 'Poppins', sans-serif;
+		    background-image: url('backgr.jpg');
+		    background-size : cover;
+		    background-attachment: fixed;
+		}
+
+		.form-section {
+		    color: #333;
+	        }
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h1>Resume Builder</h1>
+            <form id="resumeForm" onsubmit="return handleSubmit(event)">
+                
+                <div class="form-group">
+                    <h2>Personal Information :</h2>
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" 
+                           pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+                    <textarea id="address" placeholder="Address" required></textarea>
+                </div>
+
+                
+                <div class="form-group">
+                    <h2>Education :</h2>
+                    <div id="educationFields">
+                        <div class="education-entry">
+                            <input type="text" class="degree" placeholder="Degree/Certificate" required>
+                            <input type="text" class="institution" placeholder="Institution" required>
+                            <input type="number" class="year" placeholder="Year of Completion" 
+                                   min="1900" max="2024" required>
+                            <input type="text" class="grade" placeholder="Grade/Percentage" required>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addEducation()">Add More Education</button>
+                </div>
+
+                
+                <div class="form-group">
+                    <h2>Skills :</h2>
+                    <textarea id="skills" placeholder="Enter your skills (comma separated)" required></textarea>
+                </div>
+
+                
+                <div class="form-group">
+                    <h2>Hobbies</h2>
+                    <textarea id="hobbies" placeholder="Enter your hobbies (comma separated)" required></textarea>
+                </div>
+
+               
+                <div class="form-group">
+                    <h2>Upload Photo :</h2>
+                    <input type="file" id="photo" accept="image/*" class="upload" required>
+                    <img id="photoPreview" src="" alt="Preview" style="display: none;">
+                </div>
+
+                <button type="submit">Generate Resume</button>
+            </form>
+        </div>
+
+        
+        <div id="resumePreview" class="resume-preview" style="display: none;">
+            <h1><u>Professional Resume</u></h1>
+            <div class="resume-content">
+                <div class="resume-header">
+                    <div class="photo-container">
+                        <img id="resumePhoto" src="" alt="Profile Photo">
+                    </div>
+                    <div class="personal-info">
+                        <h2 id="previewName"></h2>
+                        <p id="previewEmail"></p>
+                        <p id="previewPhone"></p>
+                        <p id="previewAddress"></p>
+                    </div>
+                </div>
+
+                <div class="resume-section">
+                    <h3>Education</h3>
+                    <div id="previewEducation"></div>
+                </div>
+
+                <div class="resume-section">
+                    <h3>Skills</h3>
+                    <div id="previewSkills"></div>
+                </div>
+
+                <div class="resume-section">
+                    <h3>Hobbies</h3>
+                    <div id="previewHobbies"></div>
+                </div>
+            </div>
+            <button onclick="previewResume()">Preview Resume in New Tab</button>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
